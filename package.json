@@ -8,8 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/InRaiDi/WGP_Project.git)"
+    "url": "git+https://github.com/InRaiDi/WGP_Project.git" 
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
