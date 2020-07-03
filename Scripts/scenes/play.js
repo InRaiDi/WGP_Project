@@ -25,6 +25,7 @@ var scenes;
             console.log("Play Scene: Game");
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager);
+            this.whitehouse = new objects.WhiteHouse(this.assetManager, 0, 0);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
@@ -33,6 +34,7 @@ var scenes;
             this.background.scaleX *= 1.8;
             this.background.scaleY *= 1.8;
             this.addChild(this.background);
+            this.addChild(this.whitehouse);
         };
         return PlayScene;
     }(objects.Scene));
