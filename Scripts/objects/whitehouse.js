@@ -17,9 +17,7 @@ var objects;
         __extends(WhiteHouse, _super);
         // Variables
         // Constructor
-        function WhiteHouse(assetManager, x, y) {
-            if (x === void 0) { x = 0; }
-            if (y === void 0) { y = 0; }
+        function WhiteHouse(assetManager) {
             var _this = _super.call(this, assetManager, "whitehouse") || this;
             _this.Start();
             return _this;
