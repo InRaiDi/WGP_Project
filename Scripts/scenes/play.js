@@ -15,7 +15,6 @@ var scenes;
 (function (scenes) {
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
-        // Variables
         // Constructor
         function PlayScene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
@@ -25,11 +24,13 @@ var scenes;
         PlayScene.prototype.Start = function () {
             console.log("Play scene start");
             // Inintialize our variables
+            this.background = new objects.Background(this.assetManager);
             this.Main();
         };
         PlayScene.prototype.Update = function () {
         };
         PlayScene.prototype.Main = function () {
+            this.addChild(this.background);
         };
         return PlayScene;
     }(objects.Scene));

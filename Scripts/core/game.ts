@@ -12,7 +12,9 @@
     let currentState:number;
 
     assetManifest = [
-        {id:"background", src:"./Images/background.png"}
+        {id:"background", src:"./Images/background.png"},
+        {id:"whitehouse", src:"./Images/WhiteHouse.png"}
+
     ];
 
     function Init() {
