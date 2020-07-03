@@ -21,13 +21,14 @@ var objects;
             if (x === void 0) { x = 0; }
             if (y === void 0) { y = 0; }
             var _this = _super.call(this, assetManager, "whitehouse") || this;
-            _this.x = x;
-            _this.y = y;
             _this.Start();
             return _this;
         }
         WhiteHouse.prototype.Start = function () {
-            this.Reset();
+            this.x = 320;
+            this.y = 700;
+            this.scaleX = 0.25;
+            this.scaleY = 0.25;
         };
         return WhiteHouse;
     }(objects.GameObject));

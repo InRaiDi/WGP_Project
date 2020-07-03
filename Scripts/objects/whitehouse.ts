@@ -4,14 +4,16 @@ module objects {
         // Constructor
         constructor(assetManager:createjs.LoadQueue, x: number = 0, y:number = 0) {
             super(assetManager, "whitehouse");
-            this.x = x;
-            this.y = y;
             this.Start();
             
         }
 
         public Start():void {
-            this.Reset();
+            this.x = 320;
+            this.y = 700;
+
+            this.scaleX = 0.25;
+            this.scaleY = 0.25;
         }
     }
 }

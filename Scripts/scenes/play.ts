@@ -14,7 +14,7 @@ module scenes {
             console.log("Play Scene: Game");
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager);
-            this.whitehouse = new objects.WhiteHouse(this.assetManager, 0, 0);
+            this.whitehouse = new objects.WhiteHouse(this.assetManager);
 
             this.Main();
         }
