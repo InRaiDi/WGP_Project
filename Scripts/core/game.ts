@@ -52,7 +52,7 @@
             Main();
         }
 
-        currentScene.Update();
+       // currentScene.Update();
         stage.update();
     }
 

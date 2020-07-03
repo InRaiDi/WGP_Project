@@ -37,7 +37,7 @@
             console.log("Changing scenes to " + objects.Game.currentScene);
             Main();
         }
-        currentScene.Update();
+        // currentScene.Update();
         stage.update();
     }
     function Main() {
