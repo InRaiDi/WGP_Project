@@ -21,6 +21,8 @@ module scenes {
         }
 
         public Main():void {
+            this.background.scaleX *= 1.8;
+            this.background.scaleY *= 1.8;
             this.addChild(this.background);
         }
 

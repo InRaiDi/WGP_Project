@@ -30,6 +30,8 @@ var scenes;
         PlayScene.prototype.Update = function () {
         };
         PlayScene.prototype.Main = function () {
+            this.background.scaleX *= 1.8;
+            this.background.scaleY *= 1.8;
             this.addChild(this.background);
         };
         return PlayScene;
