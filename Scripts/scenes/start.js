@@ -25,6 +25,7 @@ var scenes;
         // Methods
         StartScene.prototype.Start = function () {
             // Initialize our objects for this scene
+            console.log("Play Scene: Start");
             this.Main();
         };
         StartScene.prototype.Update = function () {

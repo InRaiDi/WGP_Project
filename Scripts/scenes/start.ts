@@ -10,7 +10,7 @@ module scenes {
         // Methods
         public Start():void {
             // Initialize our objects for this scene
-
+            console.log("Play Scene: Start");
             this.Main();
         }
 

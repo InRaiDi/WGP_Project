@@ -27,8 +27,8 @@
         createjs.Ticker.on("tick", Update);
         // Set up default game states -- State Machine
         objects.Game.stage = stage;
-        objects.Game.currentScene = config.Scene.START;
-        currentState = config.Scene.START;
+        objects.Game.currentScene = config.Scene.GAME;
+        currentState = config.Scene.GAME;
         Main();
     }
     function Update() {

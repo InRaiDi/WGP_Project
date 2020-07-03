@@ -25,6 +25,7 @@ var scenes;
         // Method
         GameOverScene.prototype.Start = function () {
             // Initialize our variables
+            console.log("Play Scene: Game Over");
             this.Main();
         };
         GameOverScene.prototype.Update = function () { };

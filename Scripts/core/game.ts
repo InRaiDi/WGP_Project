@@ -28,7 +28,6 @@
 
     function Start() {
         console.log("Starting Application...");
-
         // Initialize CreateJS
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20);
@@ -37,9 +36,11 @@
         createjs.Ticker.on("tick", Update);
 
         // Set up default game states -- State Machine
+
         objects.Game.stage = stage;
-        objects.Game.currentScene = config.Scene.START;
-        currentState = config.Scene.START;
+        objects.Game.currentScene = config.Scene.GAME;
+        currentState = config.Scene.GAME;
+        
         Main();
     }
 
@@ -57,7 +58,7 @@
 
 
     function Main() {
-        console.log("Game Start");
+       console.log("Game Start");
 
         // Finite State Machine
         switch(objects.Game.currentScene)

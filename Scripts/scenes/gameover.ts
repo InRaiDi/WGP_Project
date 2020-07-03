@@ -12,6 +12,7 @@ module scenes {
         // Method
         public Start():void {
             // Initialize our variables
+            console.log("Play Scene: Game Over");
             this.Main();
         }
 
