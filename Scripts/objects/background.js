@@ -17,8 +17,8 @@ var objects;
         __extends(Background, _super);
         // Variables
         // Constructor
-        function Background(assetManager) {
-            var _this = _super.call(this, assetManager, "background") || this;
+        function Background(assetManager, imageString) {
+            var _this = _super.call(this, assetManager, imageString) || this;
             _this.Start();
             return _this;
         }

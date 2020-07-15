@@ -2,7 +2,7 @@ module scenes {
     export class PlayScene extends objects.Scene {
         // Variables
         private background: objects.Background;
-        private whitehouse: objects.WhiteHouse;
+        private whitehouse: objects.Background;
         private player:objects.Player;
         private enemies:objects.Enemy[];
         private enemyNum:number;
@@ -16,9 +16,9 @@ module scenes {
         public Start():void {
             console.log("Play Scene: Game");
             // Inintialize our variables
-            this.background = new objects.Background(this.assetManager);
-            this.whitehouse = new objects.WhiteHouse(this.assetManager);
-
+            this.background = new objects.Background(this.assetManager, "background");
+            this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
+            this.player = new objects.Player(this.assetManager);
             this.enemies = new Array<objects.Enemy>();
             this.enemyNum = 5;
             for(let i = 0; i < this.enemyNum; i++) {
@@ -38,6 +38,8 @@ module scenes {
         public Main():void {
             this.background.scaleX *= 1.8;
             this.background.scaleY *= 1.8;
+            this.whitehouse.x = 320; this.whitehouse.y = 860;
+            this.whitehouse.scaleX = 0.25; this.whitehouse.scaleY = 0.25;
             this.addChild(this.background);
             this.addChild(this.whitehouse);
             this.addChild(this.player);

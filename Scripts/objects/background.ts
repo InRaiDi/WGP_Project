@@ -2,8 +2,9 @@ module objects {
     export class Background extends objects.GameObject {
         // Variables
         // Constructor
-        constructor(assetManager:createjs.LoadQueue) {
-            super(assetManager, "background");
+        constructor(assetManager:createjs.LoadQueue, imageString:string) {
+            super(assetManager, imageString);
+
             this.Start();
         }
 

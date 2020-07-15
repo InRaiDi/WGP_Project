@@ -24,8 +24,9 @@ var scenes;
         PlayScene.prototype.Start = function () {
             console.log("Play Scene: Game");
             // Inintialize our variables
-            this.background = new objects.Background(this.assetManager);
-            this.whitehouse = new objects.WhiteHouse(this.assetManager);
+            this.background = new objects.Background(this.assetManager, "background");
+            this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
+            this.player = new objects.Player(this.assetManager);
             this.enemies = new Array();
             this.enemyNum = 5;
             for (var i = 0; i < this.enemyNum; i++) {
@@ -43,6 +44,10 @@ var scenes;
             var _this = this;
             this.background.scaleX *= 1.8;
             this.background.scaleY *= 1.8;
+            this.whitehouse.x = 320;
+            this.whitehouse.y = 860;
+            this.whitehouse.scaleX = 0.25;
+            this.whitehouse.scaleY = 0.25;
             this.addChild(this.background);
             this.addChild(this.whitehouse);
             this.addChild(this.player);
