@@ -15,7 +15,9 @@
         {id:"background", src:"./Images/background.png"},
         {id:"whitehouse", src:"./Images/WhiteHouse.png"},
         {id: "player", src: "./Images/guard.png"},
-        {id: "enemy", src: "./Images/zombie.png"}
+        {id: "enemy", src: "./Images/zombie.png"},
+        {id: "nextButton", src: ".Images/nextButton.png"},
+        {id: "backbutton", src: ".Images/backButton.png"}
     ];
 
     function Init() {
@@ -53,7 +55,7 @@
             Main();
         }
 
-       // currentScene.Update();
+        currentScene.Update();
         stage.update();
     }
 
