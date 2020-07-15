@@ -9,7 +9,9 @@
     var currentState;
     assetManifest = [
         { id: "background", src: "./Images/background.png" },
-        { id: "whitehouse", src: "./Images/WhiteHouse.png" }
+        { id: "whitehouse", src: "./Images/WhiteHouse.png" },
+        { id: "player", src: "./Images/guard.png" },
+        { id: "enemy", src: "./Images/zombie.png" }
     ];
     function Init() {
         console.log("Initializing Start");
