@@ -24,13 +24,14 @@ var scenes;
         // Method
         GameOverScene.prototype.Start = function () {
             // Initialize our variables
-            this.gameOverLabel = new objects.Label("Game Over!", "20px", "Arial", "#00ff00", 320, 240, true);
+            //this.gameOverLabel = new objects.Label(
+            //"Game Over!", "20px", "Arial", "#00ff00", 320, 240, true);
             this.backButton = new objects.Button(this.assetManager, "backButton", 320, 340);
             this.Main();
         };
         GameOverScene.prototype.Update = function () { };
         GameOverScene.prototype.Main = function () {
-            this.addChild(this.gameOverLabel);
+            //this.addChild(this.gameOverLabel);
             this.addChild(this.backButton);
             this.backButton.on("click", this.backButtonClick);
         };

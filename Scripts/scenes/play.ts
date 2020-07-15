@@ -6,6 +6,7 @@ module scenes {
         private player:objects.Player;
         private enemies:objects.Enemy[];
         private enemyNum:number;
+        private nextButton: objects.Button;
         // Constructor
         constructor(assetManager:createjs.LoadQueue) {
             super(assetManager);
@@ -18,6 +19,9 @@ module scenes {
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager, "background");
             this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
+            this.nextButton = new objects.Button(this.assetManager, "nextButton", 550, 20);
+            this.nextButton.scaleX -= 0.8;
+            this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player(this.assetManager);
             this.enemies = new Array<objects.Enemy>();
             this.enemyNum = 5;
@@ -42,10 +46,17 @@ module scenes {
             this.whitehouse.scaleX = 0.25; this.whitehouse.scaleY = 0.25;
             this.addChild(this.background);
             this.addChild(this.whitehouse);
+            this.addChild(this.nextButton);
             this.addChild(this.player);
+            this.nextButton.on("click", this.nextButtonClick);
             this.enemies.forEach(e => {
                 this.addChild(e);
             })
+        }
+
+        private nextButtonClick():void {
+            // Change from START to GAME scene
+            objects.Game.currentScene = config.Scene.OVER;
         }
 
     }

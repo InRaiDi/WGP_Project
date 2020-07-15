@@ -26,6 +26,9 @@ var scenes;
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager, "background");
             this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
+            this.nextButton = new objects.Button(this.assetManager, "nextButton", 550, 20);
+            this.nextButton.scaleX -= 0.8;
+            this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player(this.assetManager);
             this.enemies = new Array();
             this.enemyNum = 5;
@@ -50,10 +53,16 @@ var scenes;
             this.whitehouse.scaleY = 0.25;
             this.addChild(this.background);
             this.addChild(this.whitehouse);
+            this.addChild(this.nextButton);
             this.addChild(this.player);
+            this.nextButton.on("click", this.nextButtonClick);
             this.enemies.forEach(function (e) {
                 _this.addChild(e);
             });
+        };
+        PlayScene.prototype.nextButtonClick = function () {
+            // Change from START to GAME scene
+            objects.Game.currentScene = config.Scene.OVER;
         };
         return PlayScene;
     }(objects.Scene));
