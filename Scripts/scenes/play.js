@@ -22,7 +22,6 @@ var scenes;
             return _this;
         }
         PlayScene.prototype.Start = function () {
-            console.log("Play Scene: Game");
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager, "background");
             this.whitehouse = new objects.Background(this.assetManager, "whitehouse");

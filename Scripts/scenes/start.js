@@ -26,7 +26,7 @@ var scenes;
             // Initialize our objects for this scene
             this.background = new objects.Background(this.assetManager, "background");
             // NOTE: PreloadJS manifest id
-            this.startButton = new objects.Button(this.assetManager, "nextButton", 230, 380);
+            this.startButton = new objects.Button(this.assetManager, "nextButton", 270, 300);
             this.startButton.scaleX -= 0.5;
             this.startButton.scaleY -= 0.5;
             this.Main();

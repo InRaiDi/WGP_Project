@@ -15,7 +15,7 @@ module scenes {
         }
 
         public Start():void {
-            console.log("Play Scene: Game");
+            
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager, "background");
             this.whitehouse = new objects.Background(this.assetManager, "whitehouse");

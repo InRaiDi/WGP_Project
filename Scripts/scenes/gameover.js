@@ -24,7 +24,8 @@ var scenes;
         // Method
         GameOverScene.prototype.Start = function () {
             // Initialize our variables
-            this.gameOverLabel = new objects.Label("Game Over!", "20px", "Arial", "#00ff00", 320, 240, true);
+            this.background = new objects.Background(this.assetManager, "background");
+            this.gameOverLabel = new objects.Label("Game Over!", "20px", "Arial", "#fff", 320, 240, true);
             console.log("GAME OVER Scene Start");
             this.backButton = new objects.Button(this.assetManager, "backButton", 250, 340);
             this.backButton.scaleX -= 0.5;
@@ -33,8 +34,10 @@ var scenes;
         };
         GameOverScene.prototype.Update = function () { };
         GameOverScene.prototype.Main = function () {
+            this.background.scaleX *= 1.8;
+            this.background.scaleY *= 1.8;
+            this.addChild(this.background);
             this.addChild(this.gameOverLabel);
-            console.log("GAME OVER Scene Main");
             this.addChild(this.backButton);
             this.backButton.on("click", this.backButtonClick);
         };
