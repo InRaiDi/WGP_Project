@@ -12,8 +12,8 @@
         { id: "whitehouse", src: "./Images/WhiteHouse.png" },
         { id: "player", src: "./Images/guard.png" },
         { id: "enemy", src: "./Images/zombie.png" },
-        { id: "nextButton", src: ".Images/nextButton.png" },
-        { id: "backbutton", src: ".Images/backButton.png" }
+        { id: "nextButton", src: "./Images/nextButton.png" },
+        { id: "backbutton", src: "./Images/backButton.png" }
     ];
     function Init() {
         console.log("Initializing Start");
