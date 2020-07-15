@@ -17,7 +17,7 @@
         {id: "player", src: "./Images/guard.png"},
         {id: "enemy", src: "./Images/zombie.png"},
         {id: "nextButton", src: "./Images/nextButton.png"},
-        {id: "backbutton", src: "./Images/backButton.png"}
+        {id: "backButton", src: "./Images/backButton.png"}
     ];
 
     function Init() {
@@ -77,6 +77,7 @@
                 stage.addChild(currentScene);
             break;
             case config.Scene.OVER:
+                console.log("GAME OVER Case");
                 stage.removeAllChildren();
                 currentScene = new scenes.GameOverScene(assetManager);
                 stage.addChild(currentScene);

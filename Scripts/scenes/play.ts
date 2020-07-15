@@ -19,7 +19,7 @@ module scenes {
             // Inintialize our variables
             this.background = new objects.Background(this.assetManager, "background");
             this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
-            this.nextButton = new objects.Button(this.assetManager, "nextButton", 550, 20);
+            this.nextButton = new objects.Button(this.assetManager, "nextButton", 600, 20);
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player(this.assetManager);
@@ -42,7 +42,7 @@ module scenes {
         public Main():void {
             this.background.scaleX *= 1.8;
             this.background.scaleY *= 1.8;
-            this.whitehouse.x = 320; this.whitehouse.y = 860;
+            this.whitehouse.x = 340; this.whitehouse.y = 660;
             this.whitehouse.scaleX = 0.25; this.whitehouse.scaleY = 0.25;
             this.addChild(this.background);
             this.addChild(this.whitehouse);

@@ -24,7 +24,7 @@ var objects;
         }
         Player.prototype.Start = function () {
             this.x = 320;
-            this.y = 700;
+            this.y = 570;
         };
         Player.prototype.Update = function () {
             this.Move();
