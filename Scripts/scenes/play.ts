@@ -7,6 +7,8 @@ module scenes {
         private enemies:objects.Enemy[];
         private enemyNum:number;
         private nextButton: objects.Button;
+        private backgroundMusic:createjs.AbstractSoundInstance;
+
         // Constructor
         constructor(assetManager:createjs.LoadQueue) {
             super(assetManager);
@@ -29,6 +31,12 @@ module scenes {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
 
+            // Instantiate Sound
+            createjs.Sound.stop();
+            this.backgroundMusic = createjs.Sound.play("play_music");
+            this.backgroundMusic.loop = -1; // Loop infinitely
+            this.backgroundMusic.volume = 0.2;
+
             this.Main();
         }
 
@@ -36,6 +44,8 @@ module scenes {
             this.player.Update();
             this.enemies.forEach(e => {
                 e.Update();
+                managers.Collision.Check(this.player, e);
+                managers.Collision.Check(this.whitehouse, e);
             })
         }
 

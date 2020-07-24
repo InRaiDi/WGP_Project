@@ -30,6 +30,11 @@ var scenes;
             this.backButton = new objects.Button(this.assetManager, "backButton", 250, 340);
             this.backButton.scaleX -= 0.5;
             this.backButton.scaleY -= 0.5;
+            // Instantiate Sound
+            createjs.Sound.stop();
+            this.backgroundMusic = createjs.Sound.play("gameover_music");
+            this.backgroundMusic.loop = -1; // Loop infinitely
+            this.backgroundMusic.volume = 0.2;
             this.Main();
         };
         GameOverScene.prototype.Update = function () { };

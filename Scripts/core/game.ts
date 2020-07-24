@@ -17,7 +17,10 @@
         {id: "player", src: "./Images/guard.png"},
         {id: "enemy", src: "./Images/zombie.png"},
         {id: "nextButton", src: "./Images/nextButton.png"},
-        {id: "backButton", src: "./Images/backButton.png"}
+        {id: "backButton", src: "./Images/backButton.png"},
+        {id:"menu_music", src:"./Audio/MainMenu.wav"},
+        {id:"play_music", src:"./Audio/PlayScene.wav"},
+        {id:"gameover_music", src:"./Audio/GameOverScene.ogg"}
     ];
 
     function Init() {

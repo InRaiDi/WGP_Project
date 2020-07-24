@@ -3,6 +3,7 @@ module scenes {
         // Variables
         private background: objects.Background;
         private startButton: objects.Button;
+        private backgroundMusic: createjs.AbstractSoundInstance;
 
         // Constructor
         constructor(assetManager:createjs.LoadQueue) {
@@ -18,6 +19,13 @@ module scenes {
             this.startButton = new objects.Button(this.assetManager, "nextButton", 270, 300);
             this.startButton.scaleX -= 0.5;
             this.startButton.scaleY -= 0.5;
+
+            // Instantiate Sound
+            this.backgroundMusic = createjs.Sound.play("menu_music");
+            this.backgroundMusic.loop = -1;
+            this.backgroundMusic.volume = 0.2;
+
+
             this.Main();
         }
 
