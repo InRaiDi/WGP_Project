@@ -17,7 +17,8 @@
         { id: "backButton", src: "./Images/backButton.png" },
         { id: "menu_music", src: "./Audio/MainMenu.wav" },
         { id: "play_music", src: "./Audio/PlayScene.wav" },
-        { id: "gameover_music", src: "./Audio/GameOverScene.ogg" }
+        { id: "gameover_music", src: "./Audio/GameOverScene.ogg" },
+        { id: "collision_music", src: "./Audio/Pop.mp3" }
     ];
     function Init() {
         console.log("Initializing Start");
