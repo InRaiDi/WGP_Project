@@ -34,6 +34,9 @@ var scenes;
             for (var i = 0; i < this.enemyNum; i++) {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
+            this.scoreBoard = new managers.Scoreboard();
+            this.scoreBoard.x = 10;
+            this.scoreBoard.y = 10;
             // Instantiate Sound
             createjs.Sound.stop();
             this.backgroundMusic = createjs.Sound.play("play_music");
@@ -66,6 +69,7 @@ var scenes;
             this.enemies.forEach(function (e) {
                 _this.addChild(e);
             });
+            this.addChild(this.scoreBoard);
         };
         PlayScene.prototype.nextButtonClick = function () {
             // Change from START to GAME scene
