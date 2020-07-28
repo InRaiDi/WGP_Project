@@ -14,7 +14,7 @@ module managers {
                     //*****/
                     var backgroundMusic = createjs.Sound.play("./Audio/Pop.mp3");
                     backgroundMusic.on("loop", handleLoop);                   
-                   objects.Game.currentSceneObject.removeChild(obj2);
+ 
                     //*****/
 
                     console.log("Collision "+ obj1.name + " with " + obj2.name);
@@ -28,7 +28,7 @@ module managers {
             }
             //*****/
             function handleLoop(event) {
-                backgroundMusic.volume = backgroundMusic.volume * 0.2;
+                backgroundMusic.volume = backgroundMusic.volume * 0.1;
             }
             //*****/
         }
