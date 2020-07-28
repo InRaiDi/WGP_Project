@@ -48,7 +48,7 @@ module scenes {
             this.enemies.forEach(e => {
                 e.Update();
                 managers.Collision.Check(this.player, e);
-                managers.Collision.Check(this.whitehouse, e);
+               // managers.Collision.Check(this.whitehouse, e);
             })
         }
 

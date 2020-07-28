@@ -50,7 +50,7 @@ var scenes;
             this.enemies.forEach(function (e) {
                 e.Update();
                 managers.Collision.Check(_this.player, e);
-                managers.Collision.Check(_this.whitehouse, e);
+                // managers.Collision.Check(this.whitehouse, e);
             });
         };
         PlayScene.prototype.Main = function () {

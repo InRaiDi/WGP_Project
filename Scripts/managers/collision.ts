@@ -14,6 +14,7 @@ module managers {
                     switch(obj2.name) {
                         case "enemy":
                             createjs.Sound.play("collision_music");
+                            console.log("Collision with player");
                             break;
                     }
 
