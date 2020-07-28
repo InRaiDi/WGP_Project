@@ -32,7 +32,13 @@ var objects;
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
-            this.x = objects.Game.stage.mouseX;
+            //this.x = objects.Game.stage.mouseX;
+            if (objects.Game.keyboardManager.moveLeft) {
+                this.x -= 7.5;
+            }
+            if (objects.Game.keyboardManager.moveRight) {
+                this.x += 7.5;
+            }
         };
         Player.prototype.CheckBound = function () {
             if (this.x >= 640 - this.halfW) {

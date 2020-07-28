@@ -17,7 +17,15 @@ module objects {
         }
         public Reset():void {}
         public Move():void {       
-            this.x = objects.Game.stage.mouseX;
+            //this.x = objects.Game.stage.mouseX;
+            if(objects.Game.keyboardManager.moveLeft)
+            {
+                this.x -= 7.5;
+            }
+            if(objects.Game.keyboardManager.moveRight)
+            {
+                this.x += 7.5;
+            }
         }
         public CheckBound():void {
             if(this.x >= 640 - this.halfW)

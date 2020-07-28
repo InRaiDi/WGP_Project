@@ -6,6 +6,7 @@
 
     let assetManager:createjs.LoadQueue;
     let assetManifest: any[];
+    let keyboardManager: managers.Keyboard;
 
     // Store current scene information
     let currentScene:objects.Scene;
@@ -46,6 +47,9 @@
         objects.Game.stage = stage;
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
+
+        keyboardManager = new managers.Keyboard;
+        objects.Game.keyboardManager = keyboardManager;
         
         Main();
     }

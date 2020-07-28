@@ -4,6 +4,7 @@
     var stage;
     var assetManager;
     var assetManifest;
+    var keyboardManager;
     // Store current scene information
     var currentScene;
     var currentState;
@@ -36,6 +37,8 @@
         objects.Game.stage = stage;
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
+        keyboardManager = new managers.Keyboard;
+        objects.Game.keyboardManager = keyboardManager;
         Main();
     }
     function Update() {
