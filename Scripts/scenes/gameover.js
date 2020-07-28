@@ -25,9 +25,9 @@ var scenes;
         GameOverScene.prototype.Start = function () {
             // Initialize our variables
             this.background = new objects.Background(this.assetManager, "background");
-            this.gameOverLabel = new objects.Label("Game Over!", "20px", "Arial", "#fff", 320, 240, true);
+            this.gameOverLabel = new objects.Label("GAME OVER!", "40px", "Arial", "#f39c12", 350, 240, true);
             console.log("GAME OVER Scene Start");
-            this.backButton = new objects.Button(this.assetManager, "backButton", 250, 340);
+            this.backButton = new objects.Button(this.assetManager, "backButton", 280, 340);
             this.backButton.scaleX -= 0.5;
             this.backButton.scaleY -= 0.5;
             // Instantiate Sound

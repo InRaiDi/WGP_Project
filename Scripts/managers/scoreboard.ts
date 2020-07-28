@@ -29,8 +29,8 @@ module managers {
         // Methods
         private Init():void {
             // Create our labels
-            this.scoreLabel = new objects.Label("Score: 999999", "20px", "Consolas", "#FFFF00", 0, 0, false);
-            this.highScoreLabel = new objects.Label("High score: 0", "20px", "Consolas", "#FFFF00", 460, 0, false);
+            this.scoreLabel = new objects.Label("Score: 999999", "20px", "Consolas", "#d35400", 0, 0, false);
+            this.highScoreLabel = new objects.Label("High score: 0", "20px", "Consolas", "#d35400", 520, 0, false);
 
             // Set a default score
             this.score = 0;
