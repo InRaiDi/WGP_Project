@@ -10,23 +10,18 @@ var managers;
             if (math.Vec2.Distance(P1, P2) < (obj1.halfH + obj2.halfH)) {
                 if (!obj2.isColliding) {
                     // React to our collision
-                    //*****/
-                    var backgroundMusic = createjs.Sound.play("./Audio/Pop.mp3");
-                    backgroundMusic.on("loop", handleLoop);
-                    //*****/
-                    console.log("Collision " + obj1.name + " with " + obj2.name);
+                    // Check what I am colliding with. 
+                    switch (obj2.name) {
+                        case "enemy":
+                            createjs.Sound.play("collision_music");
+                            break;
+                    }
                     obj2.isColliding = true;
-                    //objects.Game.currentScene = config.Scene.OVER;
                 }
             }
             else {
                 obj2.isColliding = false;
             }
-            //*****/
-            function handleLoop(event) {
-                backgroundMusic.volume = backgroundMusic.volume * 0.1;
-            }
-            //*****/
         };
         return Collision;
     }());
