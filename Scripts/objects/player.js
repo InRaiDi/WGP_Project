@@ -15,20 +15,26 @@ var objects;
 (function (objects) {
     var Player = /** @class */ (function (_super) {
         __extends(Player, _super);
-        // Variables
         // Constructor
         function Player(assetManager) {
             var _this = _super.call(this, assetManager, "player") || this;
+            _this.bulletCount = 0;
             _this.Start();
             return _this;
         }
         Player.prototype.Start = function () {
             this.x = 320;
             this.y = 570;
+            this.isDead = false;
+            this.Bullets = new Array();
         };
         Player.prototype.Update = function () {
             this.Move();
             this.CheckBound();
+            this.BulletFire();
+            this.Bullets.forEach(function (bullet) {
+                bullet.Update();
+            });
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
@@ -47,6 +53,18 @@ var objects;
             // Left boundary
             if (this.x <= this.halfW) {
                 this.x = this.halfW;
+            }
+        };
+        Player.prototype.BulletFire = function () {
+            var ticker = createjs.Ticker.getTicks();
+            if (!this.isDead && objects.Game.keyboardManager.shoot && (ticker % 10 == 0)) {
+                this.bulletSpawn = new math.Vec2(this.x, this.y - this.halfH);
+                var bullet = new objects.Bullet();
+                bullet.x = this.bulletSpawn.x;
+                bullet.y = this.bulletSpawn.y;
+                this.Bullets[this.bulletCount] = bullet;
+                objects.Game.currentSceneObject.addChild(bullet);
+                this.bulletCount++;
             }
         };
         return Player;

@@ -35,6 +35,7 @@ module managers {
                 break;
                 case config.Keys.SPACE:
                     console.log("pew pew");
+                    this.shoot = true;
                 break;
             }
         }
@@ -58,6 +59,7 @@ module managers {
                 break;
                 case config.Keys.SPACE:
                     console.log("pew pew off");
+                    this.shoot = false;
                 break;
             }
         }

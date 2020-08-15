@@ -17,6 +17,7 @@
         {id:"whitehouse", src:"./Images/WhiteHouse.png"},
         {id: "player", src: "./Images/guard.png"},
         {id: "enemy", src: "./Images/zombie.png"},
+        {id: "bullet", src: "./Images/bullet.png"},
         {id: "nextButton", src: "./Images/nextButton.png"},
         {id: "backButton", src: "./Images/backButton.png"},
         {id:"menu_music", src:"./Audio/MainMenu.wav"},
