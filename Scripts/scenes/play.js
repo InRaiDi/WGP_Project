@@ -24,8 +24,8 @@ var scenes;
         PlayScene.prototype.Start = function () {
             // Inintialize our variables
             this.background = new objects.Background("background");
-            this.whitehouse = new objects.Background("whitehouse");
-            this.nextButton = new objects.Button("nextButton", 600, 50);
+            this.whitehouse = new objects.WhiteHouse();
+            this.nextButton = new objects.Button("nextButton", 600, 60);
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player();

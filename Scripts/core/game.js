@@ -13,31 +13,34 @@
         ],
         "framerate": 20,
         "frames": [
-            [0, 0, 40, 40, 0, 0, 0],
-            [40, 0, 100, 100, 0, 0, 0],
-            [140, 0, 100, 100, 0, 0, 0],
-            [240, 0, 100, 100, 0, 0, 0],
+            [0, 0, 300, 300, 0, 0, 0],
+            [300, 0, 40, 40, 0, 0, 0],
             [340, 0, 100, 100, 0, 0, 0],
             [440, 0, 100, 100, 0, 0, 0],
             [540, 0, 100, 100, 0, 0, 0],
-            [640, 0, 100, 100, 0, 0, 0]
+            [640, 0, 100, 100, 0, 0, 0],
+            [740, 0, 100, 100, 0, 0, 0],
+            [840, 0, 100, 100, 0, 0, 0],
+            [940, 0, 300, 300, 0, 0, 0],
+            [0, 300, 100, 100, 0, 0, 0],
+            [100, 300, 1122, 355, 0, 0, 0]
         ],
         "animations": {
-            "bullet": { "frames": [0] },
-            "explosion": { "frames": [1, 4] },
-            "enemy": { "frames": [5] },
-            "enemy2": { "frames": [6] },
-            "player": { "frames": [7] }
-        },
+            "backButton": { "frames": [0] },
+            "bullet": { "frames": [1] },
+            "explosion": { "frames": [2, 5] },
+            "enemy": { "frames": [6] },
+            "enemy2": { "frames": [7] },
+            "nextButton": { "frames": [8] },
+            "player": { "frames": [9] },
+            "whitehouse": { "frames": [10] }
+        }
     };
     // Store current scene information
     var currentScene;
     var currentState;
     assetManifest = [
         { id: "background", src: "./Images/background.png" },
-        { id: "whitehouse", src: "./Images/WhiteHouse.png" },
-        { id: "nextButton", src: "./Images/nextButton.png" },
-        { id: "backButton", src: "./Images/backButton.png" },
         { id: "menu_music", src: "./Audio/MainMenu.wav" },
         { id: "play_music", src: "./Audio/PlayScene.wav" },
         { id: "gameover_music", src: "./Audio/GameOverScene.ogg" },

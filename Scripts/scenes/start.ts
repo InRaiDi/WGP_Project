@@ -16,9 +16,9 @@ module scenes {
             this.background = new objects.Background("background");
             
             // NOTE: PreloadJS manifest id
-            this.startButton = new objects.Button("nextButton", 270, 300);
-            this.startButton.scaleX -= 0.5;
-            this.startButton.scaleY -= 0.5;
+            this.startButton = new objects.Button("nextButton", 340, 390);
+            this.startButton.scaleX -= 0.7;
+            this.startButton.scaleY -= 0.7;
 
             // Instantiate Sound
             this.backgroundMusic = createjs.Sound.play("menu_music");

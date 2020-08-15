@@ -2,7 +2,7 @@ module scenes {
     export class PlayScene extends objects.Scene {
         // Variables
         private background: objects.Background;
-        private whitehouse: objects.Background;
+        private whitehouse: objects.WhiteHouse;
         private player:objects.Player;
         private enemies:objects.Enemy[];
         private enemyNum:number;
@@ -21,8 +21,8 @@ module scenes {
             
             // Inintialize our variables
             this.background = new objects.Background("background");
-            this.whitehouse = new objects.Background("whitehouse");
-            this.nextButton = new objects.Button("nextButton", 600, 50);
+            this.whitehouse = new objects.WhiteHouse();
+            this.nextButton = new objects.Button("nextButton", 600, 60);
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player();

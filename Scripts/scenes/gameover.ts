@@ -20,9 +20,9 @@ module scenes {
             this.gameOverLabel = new objects.Label(
                 "GAME OVER!", "40px", "Arial", "#f39c12", 350, 240, true);
                 console.log("GAME OVER Scene Start");
-            this.backButton = new objects.Button("backButton", 280, 340);
-            this.backButton.scaleX -= 0.5;
-            this.backButton.scaleY -= 0.5;
+            this.backButton = new objects.Button("backButton", 345, 390);
+            this.backButton.scaleX -= 0.7;
+            this.backButton.scaleY -= 0.7;
 
                 // Instantiate Sound
             createjs.Sound.stop();
