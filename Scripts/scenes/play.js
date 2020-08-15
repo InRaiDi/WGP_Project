@@ -18,6 +18,7 @@ var scenes;
         // Constructor
         function PlayScene() {
             var _this = _super.call(this) || this;
+            _this.isExploding = false;
             _this.Start();
             return _this;
         }
@@ -29,6 +30,7 @@ var scenes;
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player();
+            this.bullet = new objects.Bullet();
             this.enemies = new Array();
             this.enemyNum = 5;
             for (var i = 0; i < this.enemyNum; i++) {
@@ -47,10 +49,25 @@ var scenes;
         PlayScene.prototype.Update = function () {
             var _this = this;
             this.player.Update();
+            this.bullet.Update();
             this.enemies.forEach(function (e) {
                 e.Update();
-                managers.Collision.Check(_this.player, e);
-                // managers.Collision.Check(this.whitehouse, e);
+                _this.player.isDead = managers.Collision.Check(_this.player, e);
+                if (_this.player.isDead && !_this.isExploding) {
+                    // If the player is dead and hasn't exploded...explode!
+                    // Disable music
+                    _this.backgroundMusic.stop();
+                    // Create the explosion
+                    _this.explosion = new objects.Explosion(_this.player.x, _this.player.y);
+                    _this.explosion.on("animationend", _this.handleExplosion);
+                    _this.addChild(_this.explosion);
+                    _this.isExploding = true;
+                    _this.removeChild(_this.player);
+                }
+                _this.bullet.isHit = managers.Collision.Check(_this.bullet, e);
+                if (_this.bullet.isHit) {
+                    console.log("Enemy hit");
+                }
             });
         };
         PlayScene.prototype.Main = function () {
@@ -70,6 +87,11 @@ var scenes;
                 _this.addChild(e);
             });
             this.addChild(this.scoreBoard);
+        };
+        PlayScene.prototype.handleExplosion = function () {
+            this.stage.removeChild(this.explosion);
+            this.isExploding = false;
+            objects.Game.currentScene = config.Scene.OVER;
         };
         PlayScene.prototype.nextButtonClick = function () {
             // Change from START to GAME scene

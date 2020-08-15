@@ -1,6 +1,7 @@
 module objects {
     export class Bullet extends objects.GameObject {
         // Variables
+        public isHit: boolean
         // Constructor
         constructor() {
             super("bullet");

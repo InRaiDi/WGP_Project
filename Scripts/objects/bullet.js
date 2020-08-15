@@ -15,7 +15,6 @@ var objects;
 (function (objects) {
     var Bullet = /** @class */ (function (_super) {
         __extends(Bullet, _super);
-        // Variables
         // Constructor
         function Bullet() {
             var _this = _super.call(this, "bullet") || this;

@@ -28,7 +28,8 @@
         "animations": {
             "backButton": { "frames": [0] },
             "bullet": { "frames": [1] },
-            "explosion": { "frames": [2, 5] },
+            "explosion": { "frames": [2, 5],
+                "speed": 0.07 },
             "enemy": { "frames": [6] },
             "enemy2": { "frames": [7] },
             "nextButton": { "frames": [8] },

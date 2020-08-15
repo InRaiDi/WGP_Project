@@ -9,19 +9,14 @@ var managers;
             var P2 = new math.Vec2(obj2.x, obj2.y);
             if (math.Vec2.Distance(P1, P2) < (obj1.halfH + obj2.halfH)) {
                 if (!obj2.isColliding) {
-                    // React to our collision
-                    // Check what I am colliding with. 
-                    switch (obj2.name) {
-                        case "enemy":
-                            createjs.Sound.play("collision_music");
-                            console.log("Collision with player");
-                            break;
-                    }
+                    // A collision has occurred
                     obj2.isColliding = true;
+                    return true;
                 }
-            }
-            else {
-                obj2.isColliding = false;
+                else {
+                    obj2.isColliding = false;
+                    return false;
+                }
             }
         };
         return Collision;

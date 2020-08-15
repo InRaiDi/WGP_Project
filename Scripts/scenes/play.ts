@@ -9,6 +9,9 @@ module scenes {
         private nextButton: objects.Button;
         private backgroundMusic:createjs.AbstractSoundInstance;
         private scoreBoard:managers.Scoreboard;
+        private isExploding:boolean = false;
+        private explosion:objects.Explosion;
+        private bullet:objects.Bullet;
 
         // Constructor
         constructor() {
@@ -26,6 +29,7 @@ module scenes {
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
             this.player = new objects.Player();
+            this.bullet = new objects.Bullet();
             this.enemies = new Array<objects.Enemy>();
             this.enemyNum = 5;
             for(let i = 0; i < this.enemyNum; i++) {
@@ -45,10 +49,29 @@ module scenes {
 
         public Update():void {
             this.player.Update();
+            this.bullet.Update();
             this.enemies.forEach(e => {
                 e.Update();
-                managers.Collision.Check(this.player, e);
-               // managers.Collision.Check(this.whitehouse, e);
+                this.player.isDead = managers.Collision.Check(this.player, e);
+
+                if(this.player.isDead && !this.isExploding)
+                {
+                    // If the player is dead and hasn't exploded...explode!
+                    // Disable music
+                    this.backgroundMusic.stop();
+
+                    // Create the explosion
+                    this.explosion = new objects.Explosion(this.player.x, this.player.y);
+                    this.explosion.on("animationend", this.handleExplosion);
+                    this.addChild(this.explosion);
+                    this.isExploding = true;
+                    this.removeChild(this.player);
+                }
+                this.bullet.isHit = managers.Collision.Check(this.bullet, e);
+                if(this.bullet.isHit){
+                    console.log("Enemy hit");
+                }
+                
             })
             
         }
@@ -67,6 +90,12 @@ module scenes {
                 this.addChild(e);
             });
             this.addChild(this.scoreBoard);
+        }
+
+        private handleExplosion() {
+            this.stage.removeChild(this.explosion);
+            this.isExploding = false;
+            objects.Game.currentScene = config.Scene.OVER;
         }
 
         private nextButtonClick():void {
