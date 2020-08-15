@@ -128,6 +128,7 @@
         }
 
         currentState = objects.Game.currentScene;
+        objects.Game.currentSceneObject = currentScene;
     }
 
     window.onload = Init;

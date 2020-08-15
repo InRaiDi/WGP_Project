@@ -66,6 +66,7 @@ module objects {
                 objects.Game.currentSceneObject.addChild(bullet);
                 this.bulletCount++;
             }
+            
         }
     }
 }

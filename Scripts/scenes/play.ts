@@ -50,6 +50,7 @@ module scenes {
                 managers.Collision.Check(this.player, e);
                // managers.Collision.Check(this.whitehouse, e);
             })
+            
         }
 
         public Main():void {
