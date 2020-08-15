@@ -1,15 +1,20 @@
 module objects {
-    export class Background extends objects.GameObject {
+    export class Background extends createjs.Bitmap {
         // Variables
         // Constructor
-        constructor(assetManager:createjs.LoadQueue, imageString:string) {
-            super(assetManager, imageString);
+        constructor(imageString: string) {
+            super(objects.Game.assetManager.getResult(imageString));
 
             this.Start();
         }
 
         public Start():void {
             this.Reset();
+        }
+
+        public Reset():void {
+            // Reset my background y position.
+            console.log("RESET!");
         }
     }
 }

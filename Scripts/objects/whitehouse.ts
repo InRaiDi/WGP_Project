@@ -2,8 +2,8 @@ module objects {
     export class WhiteHouse extends objects.GameObject {
         // Variables
         // Constructor
-        constructor(assetManager:createjs.LoadQueue) {
-            super(assetManager, "whitehouse");
+        constructor() {
+            super("whitehouse");
             this.Start();
             
         }

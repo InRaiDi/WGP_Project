@@ -16,18 +16,18 @@ var scenes;
     var GameOverScene = /** @class */ (function (_super) {
         __extends(GameOverScene, _super);
         // Constructor
-        function GameOverScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function GameOverScene() {
+            var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // Method
         GameOverScene.prototype.Start = function () {
             // Initialize our variables
-            this.background = new objects.Background(this.assetManager, "background");
+            this.background = new objects.Background("background");
             this.gameOverLabel = new objects.Label("GAME OVER!", "40px", "Arial", "#f39c12", 350, 240, true);
             console.log("GAME OVER Scene Start");
-            this.backButton = new objects.Button(this.assetManager, "backButton", 280, 340);
+            this.backButton = new objects.Button("backButton", 280, 340);
             this.backButton.scaleX -= 0.5;
             this.backButton.scaleY -= 0.5;
             // Instantiate Sound

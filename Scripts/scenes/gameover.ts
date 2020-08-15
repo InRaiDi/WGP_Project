@@ -7,8 +7,8 @@ module scenes {
         private backgroundMusic:createjs.AbstractSoundInstance;
 
         // Constructor
-        constructor(assetManager:createjs.LoadQueue) {
-            super(assetManager);
+        constructor() {
+            super();
 
             this.Start();
         }
@@ -16,11 +16,11 @@ module scenes {
         // Method
         public Start():void {
             // Initialize our variables
-             this.background = new objects.Background(this.assetManager, "background");
+             this.background = new objects.Background("background");
             this.gameOverLabel = new objects.Label(
                 "GAME OVER!", "40px", "Arial", "#f39c12", 350, 240, true);
                 console.log("GAME OVER Scene Start");
-            this.backButton = new objects.Button(this.assetManager, "backButton", 280, 340);
+            this.backButton = new objects.Button("backButton", 280, 340);
             this.backButton.scaleX -= 0.5;
             this.backButton.scaleY -= 0.5;
 

@@ -5,15 +5,37 @@
     var assetManager;
     var assetManifest;
     var keyboardManager;
+    var textureAtlasData;
+    var textureAtlas;
+    textureAtlasData = {
+        "images": [
+            "./Images/Sprites/textureAtlas2.png"
+        ],
+        "framerate": 20,
+        "frames": [
+            [0, 0, 40, 40, 0, 0, 0],
+            [40, 0, 100, 100, 0, 0, 0],
+            [140, 0, 100, 100, 0, 0, 0],
+            [240, 0, 100, 100, 0, 0, 0],
+            [340, 0, 100, 100, 0, 0, 0],
+            [440, 0, 100, 100, 0, 0, 0],
+            [540, 0, 100, 100, 0, 0, 0],
+            [640, 0, 100, 100, 0, 0, 0]
+        ],
+        "animations": {
+            "bullet": { "frames": [0] },
+            "explosion": { "frames": [1, 4] },
+            "enemy": { "frames": [5] },
+            "enemy2": { "frames": [6] },
+            "player": { "frames": [7] }
+        },
+    };
     // Store current scene information
     var currentScene;
     var currentState;
     assetManifest = [
         { id: "background", src: "./Images/background.png" },
         { id: "whitehouse", src: "./Images/WhiteHouse.png" },
-        { id: "player", src: "./Images/guard.png" },
-        { id: "enemy", src: "./Images/zombie.png" },
-        { id: "bullet", src: "./Images/bullet.png" },
         { id: "nextButton", src: "./Images/nextButton.png" },
         { id: "backButton", src: "./Images/backButton.png" },
         { id: "menu_music", src: "./Audio/MainMenu.wav" },
@@ -23,6 +45,7 @@
     ];
     function Init() {
         console.log("Initializing Start");
+        textureAtlas = new createjs.SpriteSheet(textureAtlasData);
         assetManager = new createjs.LoadQueue();
         assetManager.installPlugin(createjs.Sound);
         assetManager.loadManifest(assetManifest);
@@ -41,6 +64,8 @@
         currentState = config.Scene.START;
         keyboardManager = new managers.Keyboard;
         objects.Game.keyboardManager = keyboardManager;
+        objects.Game.assetManager = assetManager;
+        objects.Game.textureAtlas = textureAtlas;
         Main();
     }
     function Update() {
@@ -58,18 +83,18 @@
         switch (objects.Game.currentScene) {
             case config.Scene.START:
                 stage.removeAllChildren();
-                currentScene = new scenes.StartScene(assetManager);
+                currentScene = new scenes.StartScene();
                 stage.addChild(currentScene);
                 break;
             case config.Scene.GAME:
                 stage.removeAllChildren();
-                currentScene = new scenes.PlayScene(assetManager);
+                currentScene = new scenes.PlayScene();
                 stage.addChild(currentScene);
                 break;
             case config.Scene.OVER:
                 console.log("GAME OVER Case");
                 stage.removeAllChildren();
-                currentScene = new scenes.GameOverScene(assetManager);
+                currentScene = new scenes.GameOverScene();
                 stage.addChild(currentScene);
                 break;
         }

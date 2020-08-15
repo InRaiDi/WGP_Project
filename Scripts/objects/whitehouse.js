@@ -17,8 +17,8 @@ var objects;
         __extends(WhiteHouse, _super);
         // Variables
         // Constructor
-        function WhiteHouse(assetManager) {
-            var _this = _super.call(this, assetManager, "whitehouse") || this;
+        function WhiteHouse() {
+            var _this = _super.call(this, "whitehouse") || this;
             _this.Start();
             return _this;
         }

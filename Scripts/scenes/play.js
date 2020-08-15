@@ -16,23 +16,23 @@ var scenes;
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
         // Constructor
-        function PlayScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function PlayScene() {
+            var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         PlayScene.prototype.Start = function () {
             // Inintialize our variables
-            this.background = new objects.Background(this.assetManager, "background");
-            this.whitehouse = new objects.Background(this.assetManager, "whitehouse");
-            this.nextButton = new objects.Button(this.assetManager, "nextButton", 600, 50);
+            this.background = new objects.Background("background");
+            this.whitehouse = new objects.Background("whitehouse");
+            this.nextButton = new objects.Button("nextButton", 600, 50);
             this.nextButton.scaleX -= 0.8;
             this.nextButton.scaleY -= 0.8;
-            this.player = new objects.Player(this.assetManager);
+            this.player = new objects.Player();
             this.enemies = new Array();
             this.enemyNum = 5;
             for (var i = 0; i < this.enemyNum; i++) {
-                this.enemies[i] = new objects.Enemy(this.assetManager);
+                this.enemies[i] = new objects.Enemy();
             }
             this.scoreBoard = new managers.Scoreboard();
             this.scoreBoard.x = 10;

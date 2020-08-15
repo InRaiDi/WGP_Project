@@ -16,17 +16,17 @@ var scenes;
     var StartScene = /** @class */ (function (_super) {
         __extends(StartScene, _super);
         // Constructor
-        function StartScene(assetManager) {
-            var _this = _super.call(this, assetManager) || this;
+        function StartScene() {
+            var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // Methods
         StartScene.prototype.Start = function () {
             // Initialize our objects for this scene
-            this.background = new objects.Background(this.assetManager, "background");
+            this.background = new objects.Background("background");
             // NOTE: PreloadJS manifest id
-            this.startButton = new objects.Button(this.assetManager, "nextButton", 270, 300);
+            this.startButton = new objects.Button("nextButton", 270, 300);
             this.startButton.scaleX -= 0.5;
             this.startButton.scaleY -= 0.5;
             // Instantiate Sound

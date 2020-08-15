@@ -17,8 +17,8 @@ var objects;
         __extends(Bullet, _super);
         // Variables
         // Constructor
-        function Bullet(assetManager) {
-            var _this = _super.call(this, assetManager, "bullet") || this;
+        function Bullet() {
+            var _this = _super.call(this, "bullet") || this;
             _this.Start();
             return _this;
         }

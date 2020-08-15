@@ -6,17 +6,17 @@ module scenes {
         private backgroundMusic: createjs.AbstractSoundInstance;
 
         // Constructor
-        constructor(assetManager:createjs.LoadQueue) {
-            super(assetManager);
+        constructor() {
+            super();
             this.Start();
         }
         // Methods
         public Start():void {
             // Initialize our objects for this scene
-            this.background = new objects.Background(this.assetManager, "background");
+            this.background = new objects.Background("background");
             
             // NOTE: PreloadJS manifest id
-            this.startButton = new objects.Button(this.assetManager, "nextButton", 270, 300);
+            this.startButton = new objects.Button("nextButton", 270, 300);
             this.startButton.scaleX -= 0.5;
             this.startButton.scaleY -= 0.5;
 

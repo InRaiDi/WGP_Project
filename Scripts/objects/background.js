@@ -17,16 +17,20 @@ var objects;
         __extends(Background, _super);
         // Variables
         // Constructor
-        function Background(assetManager, imageString) {
-            var _this = _super.call(this, assetManager, imageString) || this;
+        function Background(imageString) {
+            var _this = _super.call(this, objects.Game.assetManager.getResult(imageString)) || this;
             _this.Start();
             return _this;
         }
         Background.prototype.Start = function () {
             this.Reset();
         };
+        Background.prototype.Reset = function () {
+            // Reset my background y position.
+            console.log("RESET!");
+        };
         return Background;
-    }(objects.GameObject));
+    }(createjs.Bitmap));
     objects.Background = Background;
 })(objects || (objects = {}));
 //# sourceMappingURL=background.js.map
